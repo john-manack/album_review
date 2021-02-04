@@ -20,11 +20,11 @@ app.use(express.static('public'));
 const SERVER = HTTP.createServer(app);
 
 SERVER.listen(PORT, HOSTNAME, () => {
-    console.log(`Server running at http://${HOSTNAME}:${PORT}`)
-})
+    console.log(`Server running at http://${HOSTNAME}:${PORT}`);
+});
 
-const rootController = require('./routes/index')
-const bandsController = require('./routes/bands')
+const rootController = require('./routes/index');
+const bandsController = require('./routes/bands');
 
 app.use('/', rootController);
 app.use('/bands', bandsController);
