@@ -1,0 +1,32 @@
+{
+  "name": "band_rankings",
+  "version": "1.0.0",
+  "description": "This project was created to rank the user's comfort level on certain technologies. A tiny full-stack app.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "db:create": "createdb band_rankings",
+    "db:destroy": "dropdb band_rankings",
+    "db:init": "psql -f schema.sql band_rankings",
+    "db:seed": "psql -f seed.sql band_rankings"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-manack/band_rankings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john-manack/band_rankings/issues"
+  },
+  "homepage": "https://github.com/john-manack/band_rankings#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-es6-template-engine": "^2.2.3",
+    "pg-promise": "^10.9.2",
+    "slugify": "^1.4.6"
+  }
+}
