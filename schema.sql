@@ -1,11 +1,21 @@
-CREATE TABLE bands (
+CREATE TABLE album (
     id SERIAL PRIMARY KEY,
-    band text NOT NULL,
-    rank_id integer NOT NULL
+    album_name text NOT NULL,
+    band_name text NOT NULL,
+    link text NOT NULL,
+    blerb text NOT NULL
 );
 
-CREATE TABLE ranking_scale (
+CREATE TABLE user {
     id SERIAL PRIMARY KEY,
-    ranking_title text NOT NULL,
-    ranking_value text NOT NULL
-)
+    username text NOT NULL,
+    email text NOT NULL
+}
+
+CREATE TABLE review (
+    id SERIAL PRIMARY KEY,
+    stars integer NOT NULL,
+    review_messsage text NOT NULL,
+    album_reference integer NOT NULL,
+    user_reference integer NOT NULL
+);

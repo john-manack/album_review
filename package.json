@@ -7,10 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "db:create": "createdb band_rankings",
-    "db:destroy": "dropdb band_rankings",
-    "db:init": "psql -f schema.sql band_rankings",
-    "db:seed": "psql -f seed.sql band_rankings"
+    "db:create": "createdb album_review",
+    "db:destroy": "dropdb album_review",
+    "db:init": "psql -f schema.sql album_review",
+    "db:seed": "psql -f seed.sql album_review",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && run npm db:seed"
   },
   "repository": {
     "type": "git",
