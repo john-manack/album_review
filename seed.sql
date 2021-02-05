@@ -7,12 +7,12 @@ INSERT INTO album (album_name, band_name, link) VALUES
 ('A Night at the Opera', 'Queen', 'https://en.wikipedia.org/wiki/A_Night_at_the_Opera_(Queen_album)'),
 ('Rubber Soul', 'The Beatles', 'https://en.wikipedia.org/wiki/Rubber_Soul'),
 ('Powerage', 'AC/DC', 'https://en.wikipedia.org/wiki/Powerage'),
-('Pet Sounds', 'The Beach Boys', 'https://en.wikipedia.org/wiki/Pet_Sounds')
+('Pet Sounds', 'The Beach Boys', 'https://en.wikipedia.org/wiki/Pet_Sounds'),
 ('Physical Graffiti', 'Led Zeppelin', 'https://en.wikipedia.org/wiki/Physical_Graffiti');
 
-INSERT INTO user (username, email) VALUES
+INSERT INTO user_info (username, email) VALUES
 ('f_mercury', 'f_mercury@gmail.com');
 
 INSERT INTO review (stars, review_message, album_reference, user_reference) VALUES
 ('5', 'Simply smashing!', 6, 1),
-('1', 'Rather elementary if you ask me.', 9, 1)
+('1', 'Rather elementary if you ask me.', 9, 1);
