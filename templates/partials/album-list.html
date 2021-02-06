@@ -1,0 +1,7 @@
+<h1>List of Albums and Artists</h1>
+
+<p>Select an album below to see details and rate!</p>
+
+<ul>
+    ${albumListData.map(album => `<li><a href='./bands/${album.slug}'>${album.album_name} - ${album.band_name}</a></li>`).join('')}
+</ul>

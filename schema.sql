@@ -2,6 +2,7 @@ CREATE TABLE album (
     id SERIAL PRIMARY KEY,
     album_name text NOT NULL,
     band_name text NOT NULL,
+    slug text NOT NULL,
     link text NOT NULL
 );
 
