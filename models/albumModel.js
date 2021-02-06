@@ -12,7 +12,10 @@ class AlbumModel {
     static async getAll() {
         const response = await db.any(`
             SELECT *
-            FROM 
+            FROM review
+            INNER JOIN album
+                ON review.album_reference = album.id
+            ORDER BY album.id DESC;
         `)
     }
     

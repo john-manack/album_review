@@ -18,4 +18,8 @@ router.get('/', async (req, res) => {
     });
 });
 
+router.get('/:slug', async (req, res) => {
+    
+})
+
 module.exports = router;
