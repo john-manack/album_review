@@ -21,7 +21,9 @@ router.get('/', async (req, res) => {
 router.get('/:slug', async (req, res) => {
     const { slug } = req.params;
     const album = await albumModel.getBySlug(slug);
-    const reviews = await albumModel.getAll();
+    const reviews = await albumModel.getAlbumReview(slug);
+    console.log("album data :", album);
+    console.log("review data :", reviews);
 
     if (album) {
         res.render('template', {

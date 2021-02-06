@@ -16,6 +16,6 @@ CREATE TABLE review (
     id SERIAL PRIMARY KEY,
     stars integer NOT NULL,
     review_message text NOT NULL,
-    album_reference integer NOT NULL,
-    user_reference integer NOT NULL
+    album_reference integer REFERENCES album (id),
+    user_reference integer REFERENCES user_info (id)
 );

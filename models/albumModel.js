@@ -38,12 +38,13 @@ class AlbumModel {
         }
     }
 
-    static async getAlbumReview() {
+    static async getAlbumReview(slug) {
         const response = await db.any(`
-            SELECT *
+            SELECT stars, review_message
             FROM review
             INNER JOIN album
-                ON review.album_reference = album.id;
+                ON review.album_reference = album.id
+            WHERE slug = '${slug}';
         `);
         return response;
     }

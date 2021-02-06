@@ -3,4 +3,4 @@
 <p><a href="${album.link}">Album Info</a></p>
 
 <h1>Reviews:</h1>
-<p>{album.map}</p>
+${reviews.map(review => `<p>Stars: ${review.stars} - ${review.review_message}</p>`)}
