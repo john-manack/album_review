@@ -26,6 +26,28 @@ class AlbumModel {
         return response;
     }
 
+    static async getBySlug(slug) {
+        try {
+            const response = await db.one(`
+                SELECT * FROM album WHERE slug = '${slug}';
+            `);
+            return response;
+        } catch (error) {
+            console.error("ERROR: ", error);
+            return error;
+        }
+    }
+
+    static async getAlbumReview() {
+        const response = await db.any(`
+            SELECT *
+            FROM review
+            INNER JOIN album
+                ON review.album_reference = album.id;
+        `);
+        return response;
+    }
+
 }
 
 module.exports = AlbumModel;

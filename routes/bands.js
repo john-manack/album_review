@@ -19,7 +19,24 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:slug', async (req, res) => {
-    
+    const { slug } = req.params;
+    const album = await albumModel.getBySlug(slug);
+    const reviews = await albumModel.getAll();
+
+    if (album) {
+        res.render('template', {
+            locals: {
+                title: `${album.album_name}`,
+                album,
+                reviews
+            },
+            partials: {
+                body: 'partials/album-detail',
+            }
+        });
+    } else {
+        res.status(404).send(`No album found that matches slug, ${slug}`)
+    }
 })
 
 module.exports = router;

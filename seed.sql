@@ -15,4 +15,12 @@ INSERT INTO user_info (username, email) VALUES
 
 INSERT INTO review (stars, review_message, album_reference, user_reference) VALUES
 ('5', 'Simply smashing!', 6, 1),
-('1', 'Rather elementary if you ask me.', 9, 1);
+('1', 'Rather elementary if you ask me.', 9, 1),
+('2', 'Cool!', 8, 1),
+('3', 'Neato!', 7, 1),
+('4', 'Shred Bro!', 10, 1),
+('5', 'Amazing!', 5, 1),
+('5', 'Stellar!', 4, 1),
+('3', 'Niceish.', 3, 1),
+('2', 'Underwhelming!', 2, 1),
+('1', 'Eh!', 1, 1);
