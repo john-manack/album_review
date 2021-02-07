@@ -29,21 +29,31 @@ class AlbumModel {
     }
 
     static async getAlbumReview(slug) {
-        const response = await db.any(`
-            SELECT stars, review_message
-            FROM review
-            INNER JOIN album
-                ON review.album_reference = album.id
-            WHERE slug = '${slug}';
-        `);
-        return response;
+        try {
+            const response = await db.any(`
+                SELECT stars, review_message
+                FROM review
+                INNER JOIN album
+                    ON review.album_reference = album.id
+                WHERE slug = '${slug}';
+            `);
+            return response;
+        } catch (error) {
+            console.error("ERROR :", error);
+            return error;
+        }
     }
 
     static async postReview(stars, message, album_reference) {
-        const response = await db.result(`
-            INSERT INTO review (stars, review_message, album_reference, user_reference) VALUES ($1, $2, $3, 1);
-        `,[stars, message, album_reference]);
-        return response;
+        try {
+            const response = await db.result(`
+                INSERT INTO review (stars, review_message, album_reference, user_reference) VALUES ($1, $2, $3, 1);
+            `,[stars, message, album_reference]);
+            return response;
+        } catch (error) {
+            console.error("ERROR :", error);
+            return error;
+        }
     }
 
 }

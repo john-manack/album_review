@@ -3,13 +3,18 @@
 <p><a href="${album.link}">Album Info</a></p>
 
 <h1>Reviews:</h1>
-${reviews.map(review => `<p>Stars: ${review.stars} - ${review.review_message}</p>`)}
+${reviews.map(review => `<p>Stars: ${review.stars} - ${review.review_message}</p>`).join('')}
 
 <h1>Leave a Review:</h1>
-<form action="/bands/${album.slug}/add" type="POST">
-    <input type="hidden" value="${album.id}">
-    <p>Number of Stars</p>
-    <select>
-
-    </select>>
+<form action="/bands/add" method="POST">
+    <input type="hidden" value="${album.id}" name="album_reference">
+    <select name="stars" required>
+        <option value='1'>1 Star</option>
+        <option value='2'>2 Star</option>
+        <option value='3'>3 Star</option>
+        <option value='4'>4 Star</option>
+        <option value='5'>5 Star</option>
+    </select>
+    <textarea placeholder="Leave a review" rows="4" cols="50" name="review_content"></textarea>
+    <button type="submit">Submit Review</button>
 </form>

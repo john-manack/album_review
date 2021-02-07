@@ -42,8 +42,15 @@ router.get('/:slug', async (req, res) => {
     }
 })
 
-router.post('/slug/add', async (req, res) => {
-    const { album_id } = req.body;
+router.post('/add', async (req, res) => {
+    const { album_reference, stars, review_content } = req.body;
+    const response = await albumModel.postReview(stars, review_content, album_reference);
+    console.log("'Post Review' data is :", response);
+    if (response.rowCount >= 1) {
+        res.redirect('/bands')
+    } else {
+        res.sendStatus(500)
+    }
 })
 
 module.exports = router;
