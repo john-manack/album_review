@@ -8,16 +8,6 @@ class AlbumModel {
         this.band_name = band_name;
         this.slug = slug;
     }
-
-    static async getAll() {
-        const response = await db.any(`
-            SELECT *
-            FROM review
-            INNER JOIN album
-                ON review.album_reference = album.id
-            ORDER BY album.id DESC;
-        `)
-    }
     
     static async getList() {
         const response = await db.any(`
@@ -46,6 +36,13 @@ class AlbumModel {
                 ON review.album_reference = album.id
             WHERE slug = '${slug}';
         `);
+        return response;
+    }
+
+    static async postReview(stars, message, album_reference) {
+        const response = await db.result(`
+            INSERT INTO review (stars, review_message, album_reference, user_reference) VALUES ($1, $2, $3, 1);
+        `,[stars, message, album_reference]);
         return response;
     }
 
