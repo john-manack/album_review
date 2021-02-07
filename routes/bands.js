@@ -42,8 +42,8 @@ router.get('/:slug', async (req, res) => {
     }
 })
 
-router.post('/slug', async (req, res) => {
-
+router.post('/slug/add', async (req, res) => {
+    const { album_id } = req.body;
 })
 
 module.exports = router;

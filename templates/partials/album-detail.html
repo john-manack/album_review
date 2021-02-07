@@ -6,6 +6,10 @@
 ${reviews.map(review => `<p>Stars: ${review.stars} - ${review.review_message}</p>`)}
 
 <h1>Leave a Review:</h1>
-<form>
-    
+<form action="/bands/${album.slug}/add" type="POST">
+    <input type="hidden" value="${album.id}">
+    <p>Number of Stars</p>
+    <select>
+
+    </select>>
 </form>
