@@ -10,8 +10,8 @@ INSERT INTO album (album_name, band_name, slug, link, cover) VALUES
 ('Pet Sounds', 'The Beach Boys', 'pet_sounds','https://en.wikipedia.org/wiki/Pet_Sounds', 'https://upload.wikimedia.org/wikipedia/en/b/bb/PetSoundsCover.jpg'),
 ('Physical Graffiti', 'Led Zeppelin', 'physical_graffiti','https://en.wikipedia.org/wiki/Physical_Graffiti', 'https://upload.wikimedia.org/wikipedia/en/e/e3/Led_Zeppelin_-_Physical_Graffiti.jpg');
 
-INSERT INTO user_info (username, email) VALUES
-('f_mercury', 'f_mercury@gmail.com');
+INSERT INTO user_info (first_name, last_name, email, password) VALUES
+('Freddie', 'Mercury', 'f_mercury@email.com', 'password');
 
 INSERT INTO review (stars, review_message, album_reference, user_reference) VALUES
 ('5', 'Simply smashing!', 6, 1),

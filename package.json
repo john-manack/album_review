@@ -1,7 +1,7 @@
 {
-  "name": "band_rankings",
+  "name": "album_review",
   "version": "1.0.0",
-  "description": "This project was created to rank the user's comfort level on certain technologies. A tiny full-stack app.",
+  "description": "This project was created to review 10 classic rock albums, complete with user authentication. A tiny full-stack app.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

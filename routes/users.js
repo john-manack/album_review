@@ -27,10 +27,12 @@ router.get('/login', (req, res) => {
 
 router.post('/signup', (req, res) => {
     const { first_name, last_name, user_email, user_password } = req.body;
+    res.sendStatus(200);
 });
 
 router.post('/login', (req, res) => {
     const { user_email, user_password } = req.body;
+    res.sendStatus(200);
 });
 
 module.exports = router;
