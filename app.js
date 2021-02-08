@@ -16,7 +16,9 @@ app.set('view engine', 'html');
 
 app.use(session({
     secret: 'your love is strong!',
-    is_logged_in: 'false',
+    resave: false,
+    saveUninitialized: false,
+    is_logged_in: false
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

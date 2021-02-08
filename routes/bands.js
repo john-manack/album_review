@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
         locals: {
             title: "Album Review | List",
             albumListData,
+            is_logged_in: req.session.is_logged_in
         },
         partials: {
             body: "partials/album-list",
@@ -32,7 +33,8 @@ router.get('/:slug', async (req, res) => {
             locals: {
                 title: `${album.album_name}`,
                 album,
-                reviews
+                reviews,
+                is_logged_in: req.session.is_logged_in
             },
             partials: {
                 body: 'partials/album-detail',
