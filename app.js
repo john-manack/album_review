@@ -25,6 +25,8 @@ SERVER.listen(PORT, HOSTNAME, () => {
 
 const rootController = require('./routes/index');
 const bandsController = require('./routes/bands');
+const usersController = require('./routes/users');
 
 app.use('/', rootController);
 app.use('/bands', bandsController);
+app.use('/users', usersController);
