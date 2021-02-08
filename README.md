@@ -10,3 +10,4 @@ Technologies used to build this app:
 * PostgreSQL
 * Express
 * pg-promise (npm module)
+* bcryptjs
