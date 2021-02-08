@@ -21,6 +21,27 @@ class User {
             return error.message;
         }
     }
+
+    checkPassword(hashedPassword) {
+        return bcrypt.compareSync(this.password, hashedPassword);
+    }
+
+    async login() {
+        try {
+            const query = `SELECT * FROM user_info WHERE email = '${this.email}'`;
+            const response = await db.one(query);
+            const isValid = this.checkPassword(response.password);
+            // the !! below returns a True or False when a truthy of falsy is passed
+            if (!!isValid) {
+                const { id, first_name, last_name } = response;
+                return { isValid, user_id: id, first_name, last_name };
+            } else {
+                return { isValid }
+            }
+        } catch (error) {
+            return error.message;
+        }
+    }
 }
 
 module.exports = User;
