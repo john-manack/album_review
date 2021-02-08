@@ -3,7 +3,8 @@ CREATE TABLE album (
     album_name text NOT NULL,
     band_name text NOT NULL,
     slug text NOT NULL,
-    link text NOT NULL
+    link text NOT NULL,
+    cover text NOT NULL
 );
 
 CREATE TABLE user_info (

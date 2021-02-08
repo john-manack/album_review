@@ -1,4 +1,6 @@
-<h1>Album: ${album.album_name} - Artist: ${album.band_name}</h1>
+<img src="${album.cover}" alt="The album cover for ${album.album_name} by ${album.band_name}">
+<h1>${album.album_name}</h1>
+<h2>By ${album.band_name}</h2>
 
 <p><a href="${album.link}">Album Info</a></p>
 
@@ -19,3 +21,7 @@ ${reviews.map(review => `<p>Stars: ${review.stars} - ${review.review_message}</p
     <textarea placeholder="Leave a review" rows="4" cols="50" name="review_content"></textarea>
     <button type="submit">Submit Review</button>
 </form>
+
+<hr/>
+<p><a href="/bands">Back To List</a></p>
+<p><a href="/">Home</a></p>
