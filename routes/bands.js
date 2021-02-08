@@ -43,11 +43,11 @@ router.get('/:slug', async (req, res) => {
 })
 
 router.post('/add', async (req, res) => {
-    const { album_reference, stars, review_content } = req.body;
+    const { slug, album_reference, stars, review_content } = req.body;
     const response = await albumModel.postReview(stars, review_content, album_reference);
     console.log("'Post Review' data is :", response);
     if (response.rowCount >= 1) {
-        res.redirect('/bands')
+        res.redirect(`/bands/${slug}/`)
     } else {
         res.sendStatus(500)
     }

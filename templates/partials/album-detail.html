@@ -7,13 +7,14 @@ ${reviews.map(review => `<p>Stars: ${review.stars} - ${review.review_message}</p
 
 <h1>Leave a Review:</h1>
 <form action="/bands/add" method="POST">
+    <input type="hidden" value="${album.slug}" name="slug">
     <input type="hidden" value="${album.id}" name="album_reference">
     <select name="stars" required>
         <option value='1'>1 Star</option>
-        <option value='2'>2 Star</option>
-        <option value='3'>3 Star</option>
-        <option value='4'>4 Star</option>
-        <option value='5'>5 Star</option>
+        <option value='2'>2 Stars</option>
+        <option value='3'>3 Stars</option>
+        <option value='4'>4 Stars</option>
+        <option value='5'>5 Stars</option>
     </select>
     <textarea placeholder="Leave a review" rows="4" cols="50" name="review_content"></textarea>
     <button type="submit">Submit Review</button>
