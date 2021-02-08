@@ -24,3 +24,13 @@ router.get('/login', (req, res) => {
         }
     })
 })
+
+router.post('/signup', (req, res) => {
+    const { first_name, last_name, user_email, user_password } = req.body;
+});
+
+router.post('/login', (req, res) => {
+    const { user_email, user_password } = req.body;
+});
+
+module.exports = router;

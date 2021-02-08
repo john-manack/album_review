@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
 router.get('/:slug', async (req, res) => {
     console.log("Req Params are: ", req.params)
     const { slug } = req.params;
+    console.log("Slug is :", slug);
     const album = await albumModel.getBySlug(slug);
     const reviews = await albumModel.getAlbumReview(slug);
     console.log("album data :", album);
@@ -40,7 +41,7 @@ router.get('/:slug', async (req, res) => {
     } else {
         res.status(404).send(`No album found that matches slug, ${slug}`)
     }
-})
+});
 
 router.post('/add', async (req, res) => {
     const { slug, album_reference, stars, review_content } = req.body;
