@@ -1,6 +1,6 @@
 # Band Rankings App - Model, View, Controller
 
-This project was created to rank the user's comfort level on certain technologies. A tiny full-stack app.
+This project was created to review 10 classic rock albums, complete with user authentication. A tiny full-stack app.
 
 Technologies used to build this app:
 
@@ -10,3 +10,4 @@ Technologies used to build this app:
 * PostgreSQL
 * Express
 * pg-promise (npm module)
+* bcryptjs

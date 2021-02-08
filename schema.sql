@@ -9,8 +9,10 @@ CREATE TABLE album (
 
 CREATE TABLE user_info (
     id SERIAL PRIMARY KEY,
-    username text NOT NULL,
-    email text NOT NULL
+    first_name text NOT NULL,
+    last_name text NOT NULL,
+    email text NOT NULL,
+    password varchar(2000) NOT NULL
 );
 
 CREATE TABLE review (

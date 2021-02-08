@@ -1,7 +1,7 @@
 {
-  "name": "band_rankings",
+  "name": "album_review",
   "version": "1.0.0",
-  "description": "This project was created to rank the user's comfort level on certain technologies. A tiny full-stack app.",
+  "description": "This project was created to review 10 classic rock albums, complete with user authentication. A tiny full-stack app.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,8 +25,10 @@
   },
   "homepage": "https://github.com/john-manack/band_rankings#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-es6-template-engine": "^2.2.3",
+    "express-session": "^1.17.1",
     "pg-promise": "^10.9.2",
     "slugify": "^1.4.6"
   }
