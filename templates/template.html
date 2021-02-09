@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 <body>
+    <nav role="navigation" aria-label="main navigation">
+        <div>
+            <a href='/'>Home</a>
+            ${!!is_logged_in ? `
+                <a class="navbar-item" href='/users/logout'>Logout</a>
+                ` : `
+                <a class="navbar-item" href='/users/signup'>Register</a>
+                <a class="navbar-item" href='/users/login'>Login</a>
+                `
+            }
+        </div>
+    </nav>
     ${body}
 </body>
 </html>
